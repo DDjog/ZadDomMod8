@@ -10,7 +10,7 @@ def get_birthdays_per_week(users):
 
     for user in users:
         birthday = user["birthday"]
-        if start_of_week <= birthday <= end_of_week:
+        if start_of_week.date().month==birthday.date().month  and start_of_week.date().day<= birthday.date().day <= end_of_week.date().day:
             print(f"{birthday.strftime('%A')}: {user['name']}")
             if birthday.weekday() in (5, 6):
                 print(f"Monday: {user['name']}")
